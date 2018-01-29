@@ -20,6 +20,11 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+
+
+
+
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
 li a:hover {
@@ -37,4 +42,23 @@ body {
   width: 100%;
   text-align: center;
   color: white;
+}
+
+th {
+    background-color: #333;
+    color: white;
+    font-family: "Helvetica", helvetica, sans-serif;
+    font-weight: lighter;
+
+}
+
+td {
+
+    color: white;
+    font-family: "Helvetica", helvetica, sans-serif;
+    font-weight: lighter;
+    border: 1pt solid white;
+    font-family: "Helvetica", helvetica, sans-serif;
+    font-weight: lighter;
+
 }

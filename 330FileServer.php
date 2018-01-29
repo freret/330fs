@@ -32,4 +32,31 @@
   ?>
 </div>
 
+
+<div id="tableview">
+  <table style="width:100%">
+    <tr>
+      <th>Type</th>
+      <th>File Name</th>
+      <th>Size</th>
+      <th>Actions</th>
+
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>Name</td>
+      <td>Size </td>
+      <td> <input name="<?php echo $row['id']; ?>" type="submit" id="<?php echo $row['id']; ?>" value="Download">
+        <input name="<?php echo $row['id']; ?>" type="submit" id="<?php echo $row['id']; ?>"  value="Delete">
+
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+
+
 </html>
