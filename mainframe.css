@@ -1,0 +1,40 @@
+/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li a {
+  font-family: "Helvetica", helvetica, sans-serif;
+  font-weight: lighter;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
+
+li a:hover {
+  background-color: #111;
+}
+body {
+  background-color: DodgerBlue;
+}
+.active {
+  background-color: #c62828;
+}
+
+#testing {
+  padding-top: 40pt;
+  width: 100%;
+  text-align: center;
+  color: white;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head><title>Fileserver</title>
+  <link rel="stylesheet" type="text/css" href="login.css" />
+</head>
+
+<div id="Header"
+<h1>Welcome to 330 File Server </h1> <br><br>
+<img src="http://m.memegen.com/aapdzl.jpg" alt="MEME" height="402" width="312">
+</div>
+<div id="Portal">
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+    <p>
+      <label for="firstnameinput">Username:</label>
+      <input type="text" name="username" id="username"/>
+    </p>
+    <p>
+      <input type="submit" value="Login" />
+    </p>
+  </form>
+  <?php
+  if(isset($_POST['firstnameinput'])) {
+    $flag = false;
+    $u = $_POST['username'];
+    //Variables for Login Page
+    $h = fopen("Module2/users.txt", "r");
+    $activeuser='null';
+    while( !feof($h) ){
+      if (fgets($h)==$u) {
+        session_start();
+        $_SESSION['username'] = $u;
+        $flag = true;
+        header('Location: http://cnn.com');
+      }
+    }
+    if ($flag == false) {
+      //popup
+    }
+  fclose($h);
+  }
+</div>
+
+<body>
+
+</body>
+
+</html>
