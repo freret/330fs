@@ -21,12 +21,12 @@
 </body>
 <div id="testing">
   <?php
-  $filepath = "/home/rfreret/Module2/" . $_SESSION['username'];
+  $filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
   chdir($filepath);
-  $filenames = scandir("./");
-  $differenced = array_values(array_diff($filenames, array("..",".")));
-  for ($i = 0; $i < sizeof($differenced); $i++) {
-      $specpath = $filepath . "/" . $differenced[$i];
+  $filenames = scandir('./');
+  $differenced = array_values(array_diff($filenames, array('..', '.')));
+  for ($i = 0; $i < sizeof($differenced); ++$i) {
+      $specpath = $filepath.'/'.$differenced[$i];
       echo "<a href=$specpath>$differenced[$i]</a><br>";
   }
   ?>
@@ -40,7 +40,6 @@
       <th>File Name</th>
       <th>Size</th>
       <th>Actions</th>
-
     </tr>
     <tr>
       <td>Type</td>

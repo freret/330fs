@@ -8,7 +8,7 @@
 <img src="WULogo.png" alt="MEME" width="100">
 </div>
 <div id="Portal">
-  <?php session_start(); session_destroy();?>
+  <?php session_start(); session_destroy(); ?>
   <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
     <p>
       <label for="firstnameinput">Username:</label>
@@ -22,22 +22,22 @@
   if (isset($_POST['username'])) {
       $flag = false;
       $nonewline = $_POST['username'];
-      $u = $_POST['username'] . "\n";
+      $u = $_POST['username']."\n";
       //Variables for Login Page
-      chdir("/home/rfreret/Module2");
-      $activeuser='null';
-      $h = fopen("users.txt", "r");
+      chdir('/home/rfreret/Module2');
+      $activeuser = 'null';
+      $h = fopen('users.txt', 'r');
       while (!feof($h)) {
           $account = fgets($h);
-          if (strcmp($account, $u)==0) {
+          if (0 == strcmp($account, $u)) {
               session_start();
               $_SESSION['username'] = $nonewline;
               $flag = true;
               header('Location: 330FileServer');
           }
       }
-      if ($flag == false) {
-          $wronguser = "Unrecognized username; please try again";
+      if (false == $flag) {
+          $wronguser = 'Unrecognized username; please try again';
           echo "<script type='text/javascript'>alert('$wronguser');</script>";
           //echo "<script> $( function() { $( $wronguser ).dialog(); } ); </script>";
       }
