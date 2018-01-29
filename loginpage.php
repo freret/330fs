@@ -4,8 +4,8 @@
 </head>
 
 <div id="Header"
-<h1>330 File Server </h1> <br><br>
-<img src="http://m.memegen.com/aapdzl.jpg" alt="MEME" height="402" width="312">
+<h1>330 File Server</h1> <br>
+<img src="WULogo.png" alt="MEME" width="100">
 </div>
 <div id="Portal">
   <?php session_start(); session_destroy();?>
@@ -37,9 +37,10 @@
       }
     }
     if ($flag == false) {
-      //popup
+      $wronguser = "Unrecognized username; please try again";
+      echo "<script type='text/javascript'>alert('$wronguser');</script>";
     }
-  fclose($h);
+    fclose($h);
   }
   ?>
 </div>
