@@ -22,6 +22,19 @@ li a {
   text-decoration: none;
 }
 
+li b {
+  font-family: "Helvetica", helvetica, sans-serif;
+  font-weight: lighter;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  background-color: #2E8B57;
+  text-decoration: none;
+}
+
+
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
 li a:hover {
