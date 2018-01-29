@@ -39,6 +39,7 @@
     if ($flag == false) {
       $wronguser = "Unrecognized username; please try again";
       echo "<script type='text/javascript'>alert('$wronguser');</script>";
+      //echo "<script> $( function() { $( $wronguser ).dialog(); } ); </script>";
     }
     fclose($h);
   }
