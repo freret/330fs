@@ -1,4 +1,5 @@
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -21,18 +22,16 @@ li a {
   text-decoration: none;
 }
 
-
-
-
-
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
 li a:hover {
   background-color: #111;
 }
+
 body {
   background-color: DodgerBlue;
 }
+
 .active {
   background-color: #c62828;
 }
@@ -45,20 +44,17 @@ body {
 }
 
 th {
-    background-color: #333;
-    color: white;
-    font-family: "Helvetica", helvetica, sans-serif;
-    font-weight: lighter;
-
+  background-color: #333;
+  color: white;
+  font-family: "Helvetica", helvetica, sans-serif;
+  font-weight: lighter;
 }
 
 td {
-
-    color: white;
-    font-family: "Helvetica", helvetica, sans-serif;
-    font-weight: lighter;
-    border: 1pt solid white;
-    font-family: "Helvetica", helvetica, sans-serif;
-    font-weight: lighter;
-
+  color: white;
+  font-family: "Helvetica", helvetica, sans-serif;
+  font-weight: lighter;
+  border: 1pt solid white;
+  font-family: "Helvetica", helvetica, sans-serif;
+  font-weight: lighter;
 }

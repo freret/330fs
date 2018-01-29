@@ -1,17 +1,13 @@
 @font-face {
-font-family: "Lato-Black";
-src: url("Fonts/Lato-Black.ttf");
-src: url("Fonts/Lato-Black.eot") format("eot"),
-url("Fonts/Lato-Black.woff") format("woff"),
-url("Fonts/Lato-Black.woff2") format("woff2");
+  font-family: "Lato-Black";
+  src: url("Fonts/Lato-Black.ttf");
+  src: url("Fonts/Lato-Black.eot") format("eot"), url("Fonts/Lato-Black.woff") format("woff"), url("Fonts/Lato-Black.woff2") format("woff2");
 }
 
 @@font-face {
   font-family: "Lato-Light";
   src: url("Fonts/Lato-Light.ttf");
-  src: url("Fonts/Lato-Light.eot") format("eot"),
-  url("Fonts/Lato-Light.woff") format("woff"),
-  url("Fonts/Lato-Light.woff2") format("woff2");
+  src: url("Fonts/Lato-Light.eot") format("eot"), url("Fonts/Lato-Light.woff") format("woff"), url("Fonts/Lato-Light.woff2") format("woff2");
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -25,12 +21,11 @@ input[type=button], input[type=submit], input[type=reset] {
   font-family: "Lato-Light", lato-light, sans-serif;
 }
 
-
 body {
   background-color: DodgerBlue;
 }
 
-#Portal{
+#Portal {
   margin: 0 auto;
   width: 100%;
   text-align: center;
@@ -38,7 +33,7 @@ body {
   font-family: "Lato-Light", lato-light, sans-serif;
 }
 
-#Header{
+#Header {
   padding-top: 120px;
   margin: 0 auto;
   width: 100%;
