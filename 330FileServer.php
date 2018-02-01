@@ -9,6 +9,7 @@
   <ul>
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
     <li style="float:right"><a class="Upload" href="null">Upload File</a></li>
+
     <li><a><?php
     session_start();
     if (isset($_SESSION['username'])) {
