@@ -21,10 +21,6 @@
   </ul>
 </body>
 
-
-
-
-
 <div id="testing">
   <?php
   $filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
