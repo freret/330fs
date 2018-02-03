@@ -27,6 +27,7 @@
   chdir($filepath);
   $filenames = scandir('./');
   $differenced = array_values(array_diff($filenames, array('..', '.')));
+  if (sizeof($differenced)==0) {$message=true;} //upload message
   echo "<div id=\"tableview\">";
   echo "<table style=\"width:100%\">";
   echo "<tr>";
@@ -66,6 +67,11 @@
   echo "</div>";
   ?>
 </div>
+
+<div id='<?php echo $message?>'>
+Please Upload A File
+</div>
+
 
 
 </html>
