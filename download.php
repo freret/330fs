@@ -1,4 +1,14 @@
+<?php echo $_POST['filename'] ?>
+
+
+
 <?php
+
+session_start();
+$filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
+chdir($filepath);
+
+
 function download($filename){
 
     session_start();
