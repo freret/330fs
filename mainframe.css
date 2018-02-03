@@ -75,10 +75,8 @@ td {
   font-weight: lighter;
 }
 
-#upload
+.upload
 {
 background-color: #white;
-width: 100%;
-
-
+width: 10%;
 }

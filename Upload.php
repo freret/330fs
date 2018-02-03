@@ -8,7 +8,7 @@
 
   <ul>
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
-    <li style="float:right"><a class="Upload" href="null">Home</a></li>
+    <li style="float:right"><a class="Upload" href="330FileServer.php">Home</a></li>
 
     <li><a><?php
     session_start();
@@ -50,7 +50,6 @@
 </div>
 
 <?php
-
 $username=$_SESSION['username'];
 
 echo $username;
@@ -78,7 +77,6 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 	header("Location: upload.php");
 	exit;
 }
-
 ?>
 
 

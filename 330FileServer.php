@@ -8,7 +8,7 @@
 
   <ul>
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
-    <li style="float:right"><a class="Upload" href="null">Upload File</a></li>
+    <li style="float:right"><a class="Upload" href="Upload.php">Upload File</a></li>
 
     <li><a><?php
     session_start();
@@ -55,7 +55,7 @@
     echo "<input type=\"submit\" name=\"filename\" value=\"Download\" class=\"register\"/>";
     echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
     echo "</form>";
-    echo "<form action=\"delete.php\" method=\"post\">";
+    echo "<form action=\"delete.php\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to delete $differenced[$i]?')\">";
     echo "<input type=\"submit\" name=\"filename\" value=\"Delete\" class=\"register\"/>";
     echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
     echo "</form>";
