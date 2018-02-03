@@ -8,6 +8,8 @@
 
   <ul>
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
+    <li style="float:right"><a class="Upload" href="null">Upload File</a></li>
+
     <li><a><?php
     session_start();
     if (isset($_SESSION['username'])) {
@@ -17,8 +19,12 @@
     }
     ?></a></li>
   </ul>
-
 </body>
+
+
+
+
+
 <div id="testing">
   <?php
   $filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
@@ -30,6 +36,8 @@
       echo "<a href=$specpath>$differenced[$i]</a><br>";
   }
   ?>
+
+
 </div>
 
 
@@ -41,17 +49,19 @@
       <th>Size</th>
       <th>Actions</th>
     </tr>
+
     <tr>
       <td>Type</td>
       <td>Name</td>
       <td>Size </td>
-      <td> <input name="<?php echo $row['id']; ?>" type="submit" id="<?php echo $row['id']; ?>" value="Download">
+      <td> <form action="download.php" method="post">
+        <input type='submit' name='submit' value='Download' class='register'/>
+      </form>
         <input name="<?php echo $row['id']; ?>" type="submit" id="<?php echo $row['id']; ?>"  value="Delete">
 
       </td>
     </tr>
   </table>
-
 </div>
 
 
