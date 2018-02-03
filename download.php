@@ -28,6 +28,8 @@ $mime = $finfo->file($full_path);
 
 // Finally, set the Content-Type header to the MIME type of the file, and display the file.
 header("Content-Type: ".$mime);
+//header("Content-Type: application/octet-stream");
+
 readfile($full_path);
 
 ?>
