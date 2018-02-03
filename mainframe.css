@@ -12,7 +12,7 @@ ul {
 }
 
 li a {
-  font-family: "Helvetica", helvetica, sans-serif;
+  font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
   float: left;
   display: block;
@@ -23,7 +23,7 @@ li a {
 }
 
 li b {
-  font-family: "Helvetica", helvetica, sans-serif;
+  font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
   float: left;
   display: block;
@@ -62,21 +62,24 @@ body {
 th {
   background-color: #333;
   color: white;
-  font-family: "Helvetica", helvetica, sans-serif;
+  font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
 }
 
 td {
   color: white;
-  font-family: "Helvetica", helvetica, sans-serif;
+  font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
   border: 1pt solid white;
-  font-family: "Helvetica", helvetica, sans-serif;
-  font-weight: lighter;
 }
 
 .upload
 {
 background-color: #white;
+<<<<<<< HEAD
 width: 10%;
+=======
+width: 100%;
+
+>>>>>>> 0d54fe98bd1b5d5361c3756ce2256584122c1248
 }
