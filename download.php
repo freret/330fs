@@ -19,7 +19,6 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 	exit;
 }
 
-chdir($filepath);
 
 $full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 
