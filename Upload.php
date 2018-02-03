@@ -49,30 +49,33 @@
 </form>
 </div>
 
-
 <?php
+
+$username=$_SESSION['username'];
+
+echo $username;
+//if isset(is_uploaded_file){
 
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
-if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
+  if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
 	echo "Invalid filename";
 	exit;
 }
 
 // Get the username and make sure it is valid
-$username = $_SESSION['username'];
 if( !preg_match('/^[\w_\-]+$/', $username) ){
 	echo "Invalid username";
 	exit;
 }
 
-$full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
-
+$full_path = sprintf('/home/rfreret/Module2/%s/%s', $username, $filename);
+echo $full_path;
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
-	header("Location: upload_success.html");
+	header('Location: 330FileServer');
 	exit;
 }else{
-	header("Location: upload_failure.html");
+	header("Location: Upload.php");
 	exit;
 }
 
