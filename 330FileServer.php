@@ -31,13 +31,20 @@
   chdir($filepath);
   $filenames = scandir('./');
   $differenced = array_values(array_diff($filenames, array('..', '.')));
+  echo "<div> id=\"tableview\">"
+  echo "<table style=\"width:100%\">"
+  echo "<tr>"
+  echo "<th>Type</th>"
+  echo "<th>File Name</th>"
+  echo "<th>Size</th>"
+  echo "<th>Actions</th>"
+  echo "</tr>"
+  echo 
   for ($i = 0; $i < sizeof($differenced); ++$i) {
       $specpath = $filepath.'/'.$differenced[$i];
       echo "<a href=$specpath>$differenced[$i]</a><br>";
   }
   ?>
-
-
 </div>
 
 

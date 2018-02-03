@@ -34,7 +34,7 @@
               $_SESSION['username'] = $nonewline;
               $flag = true;
               header('Location: 330FileServer');
-          }
+        }
       }
       if (false == $flag) {
           $wronguser = 'Unrecognized username; please try again';
