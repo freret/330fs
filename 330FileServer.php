@@ -31,44 +31,37 @@
   chdir($filepath);
   $filenames = scandir('./');
   $differenced = array_values(array_diff($filenames, array('..', '.')));
-  echo "<div> id=\"tableview\">"
-  echo "<table style=\"width:100%\">"
-  echo "<tr>"
-  echo "<th>Type</th>"
-  echo "<th>File Name</th>"
-  echo "<th>Size</th>"
-  echo "<th>Actions</th>"
-  echo "</tr>"
-  echo 
+  echo "<div id=\"tableview\">";
+  echo "<table style=\"width:100%\">";
+  echo "<tr>";
+  echo "<th>Type</th>";
+  echo "<th>File Name</th>";
+  echo "<th>Size</th>";
+  echo "<th>Actions</th>";
+  echo "</tr>";
   for ($i = 0; $i < sizeof($differenced); ++$i) {
       $specpath = $filepath.'/'.$differenced[$i];
-      echo "<a href=$specpath>$differenced[$i]</a><br>";
+      $finfo = new finfo(FILEINFO_MIME_TYPE);
+      $mime = $finfo->file($specpath);
+      $filesize = filesize($specpath);
+      echo "<tr>";
+      echo "<td>$mime</td>";
+      echo "<td>$differenced[$i]</td>";
+      echo "<td>$filesize</td>";
+      echo "<td><form action=\"download.php\" method=\"post\">";
+      echo "<input type=\"submit\" name=\"filename\" value=\"Download\" class=\"register\"/>";
+      echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
+      echo "</form>";
+      echo "<form action=\"delete.php\" method=\"post\">";
+      echo "<input type=\"submit\" name=\"filename\" value=\"Delete\" class=\"register\"/>";
+      echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
+      echo "</form>";
+      echo "</td>";
   }
+  echo "</tr>";
+  echo "</table>";
+  echo "</div>";
   ?>
-</div>
-
-
-<div id="tableview">
-  <table style="width:100%">
-    <tr>
-      <th>Type</th>
-      <th>File Name</th>
-      <th>Size</th>
-      <th>Actions</th>
-    </tr>
-
-    <tr>
-      <td>Type</td>
-      <td>Name</td>
-      <td>Size </td>
-      <td> <form action="download.php" method="post">
-        <input type='submit' name='submit' value='Download' class='register'/>
-      </form>
-        <input name="<?php echo $row['id']; ?>" type="submit" id="<?php echo $row['id']; ?>"  value="Delete">
-
-      </td>
-    </tr>
-  </table>
 </div>
 
 
