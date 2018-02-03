@@ -22,8 +22,7 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 $full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 
 // Now we need to get the MIME type (e.g., image/jpeg).  PHP provides a neat little interface to do this called finfo.
-
+chmod ($full_path, 700); //temp permissions to delete
 unlink($full_path);
-header('Location: 330FileServer');
 
 ?>
