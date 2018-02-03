@@ -25,7 +25,7 @@ $full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 $finfo = new finfo(FILEINFO_MIME_TYPE);
 $mime = $finfo->file($full_path);
 
-delete($full_path);
+unlink($full_path);
 header('Location: 330FileServer');
 
 ?>
