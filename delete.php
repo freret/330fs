@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $filename = $_POST['filename'];
 
@@ -18,11 +19,13 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 	exit;
 }
 
+$full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 
+// Now we need to get the MIME type (e.g., image/jpeg).  PHP provides a neat little interface to do this called finfo.
+$finfo = new finfo(FILEINFO_MIME_TYPE);
+$mime = $finfo->file($full_path);
 
-
-
-
-
+delete($full_path);
+header('Location: 330FileServer');
 
 ?>
