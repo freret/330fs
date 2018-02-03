@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $filename = $_POST['filename'];
 
@@ -19,8 +18,11 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 	exit;
 }
 
-$full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 
-delete($file_path);
+
+
+
+
+
 
 ?>
