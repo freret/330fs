@@ -33,7 +33,6 @@ li b {
   text-decoration: none;
 }
 
-
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
 li a:hover {
@@ -47,9 +46,9 @@ body {
 .active {
   background-color: #c62828;
 }
-.Upload
-{background-color: #2E8B57;
 
+.Upload {
+  background-color: #2E8B57;
 }
 
 #testing {
@@ -73,13 +72,7 @@ td {
   border: 1pt solid white;
 }
 
-.upload
-{
-background-color: #white;
-<<<<<<< HEAD
-width: 10%;
-=======
-width: 100%;
-
->>>>>>> 0d54fe98bd1b5d5361c3756ce2256584122c1248
+.upload {
+  background-color: #white;
+  width: 10%;
 }

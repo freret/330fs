@@ -69,7 +69,6 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 }
 
 $full_path = sprintf('/home/rfreret/Module2/%s/%s', $username, $filename);
-echo $full_path;
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 	header('Location: 330FileServer');
 	exit;
