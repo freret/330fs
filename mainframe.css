@@ -76,3 +76,7 @@ td {
   background-color: #white;
   width: 10%;
 }
+
+.sides, .sides input, .{
+  display: inline;
+}

@@ -51,11 +51,11 @@
     echo "<td>$mime</td>";
     echo "<td>$differenced[$i]</td>";
     echo "<td>$filesize</td>";
-    echo "<td><form action=\"download.php\" method=\"post\">";
+    echo "<td><form action=\"download.php\" method=\"post\" class=\"sides\">";
     echo "<input type=\"submit\" name=\"filename\" value=\"Download\" class=\"register\"/>";
     echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
     echo "</form>";
-    echo "<form action=\"delete.php\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to delete $differenced[$i]?')\">";
+    echo "<form action=\"delete.php\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to delete $differenced[$i]?')\" class=\"sides\">";
     echo "<input type=\"submit\" name=\"filename\" value=\"Delete\" class=\"register\"/>";
     echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
     echo "</form>";

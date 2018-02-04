@@ -50,7 +50,7 @@
 </div>
 
 <?php
-
+error_reporting(0);
 $username=$_SESSION['username'];
 
 //if isset($_FILES['uploadedfile']){
@@ -58,13 +58,13 @@ $username=$_SESSION['username'];
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
   if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
-	echo "Invalid filename";
+	//echo "Invalid filename";
 	exit;
 }
 
 // Get the username and make sure it is valid
 if( !preg_match('/^[\w_\-]+$/', $username) ){
-	echo "Invalid username";
+	//echo "Invalid username";
 	exit;
 }
 
