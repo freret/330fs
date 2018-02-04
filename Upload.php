@@ -53,7 +53,7 @@
 error_reporting(0);
 $username=$_SESSION['username'];
 
-//if isset($_FILES['uploadedfile']){
+
 
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
@@ -67,7 +67,7 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 	//echo "Invalid username";
 	exit;
 }
-
+//upload the file
 $full_path = sprintf('/home/rfreret/Module2/%s/%s', $username, $filename);
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 	header('Location: 330FileServer');
