@@ -50,10 +50,10 @@
 </div>
 
 <?php
+
 $username=$_SESSION['username'];
 
-echo $username;
-//if isset(is_uploaded_file){
+//if isset($_FILES['uploadedfile']){
 
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
@@ -76,6 +76,7 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 	header("Location: Upload.php");
 	exit;
 }
+
 ?>
 
 
