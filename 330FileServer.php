@@ -14,7 +14,7 @@
     session_start();
     //check to make sure there is an active user and if not redirect to login page
     if (isset($_SESSION['username'])) {
-      echo $_SESSION['username'];
+      echo htmlentities($_SESSION['username']);
     } else {
       header('Location: loginpage.php');
     }
@@ -25,7 +25,7 @@
 <div id="testing">
   <?php
   //generate file path and change directory. Then populate a table using the file names.
-  $filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
+  $filepath = htmlentities('/home/rfreret/Module2/'.$_SESSION['username']);
   chdir($filepath);
   $filenames = scandir('./');
   $differenced = array_values(array_diff($filenames, array('..', '.')));
@@ -50,21 +50,16 @@
     $filesize = round($bytes, 1) . ' ' . $units[$pow];
     // End quoted work
     echo "<tr>";
-    echo "<td>$mime</td>";
-    echo "<td>$differenced[$i]</td>";
-    echo "<td>$filesize</td>";
-<<<<<<< HEAD
+    printf("<td>%s</td>", htmlentities($mime));
+    printf("<td>%s</td>", htmlentities($differenced[$i]));
+    printf("<td>%s</td>", htmlentities($filesize));
     echo "<td><form action=\"download.php\" method=\"post\" class=\"sides\">";
-=======
-    echo "<td><form action=\"download.php\" method=\"post\">";
-    //if user clicks button pass the file name and action to proper channel
->>>>>>> b6dbd5b80f2b308cbfb90b6b037ca0a99832a0d9
     echo "<input type=\"submit\" name=\"filename\" value=\"Download\" class=\"register\"/>";
-    echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
+    printf("<input type=\"hidden\" name=\"filename\" value=\"%s\">", htmlentities($differenced[$i]));
     echo "</form>";
-    echo "<form action=\"delete.php\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to delete $differenced[$i]?')\" class=\"sides\">";
+    printf("<form action=\"delete.php\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to delete %s?')\" class=\"sides\">", htmlentities($differenced[$i]));
     echo "<input type=\"submit\" name=\"filename\" value=\"Delete\" class=\"register\"/>";
-    echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
+    printf("<input type=\"hidden\" name=\"filename\" value=\"%s\">", htmlentities($differenced[$i]));
     echo "</form>";
     echo "</td>";
   }
@@ -74,7 +69,8 @@
 //if there are no files then print out the message
   if (sizeof($differenced)==0) {
     echo "\n";
-    echo "Please Upload A File";
+    echo "<br>";
+    echo "<div class=\"uploadmessage\">Please Upload A File</div>";
   }
   ?>
 </div>

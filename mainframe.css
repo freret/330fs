@@ -74,9 +74,10 @@ td {
 
 .upload {
   background-color: #white;
-  width: 10%;
+  width: 100%;
 }
 
-.sides, .sides input, .{
-  display: inline;
+.uploadmessage {
+  color: black;
+  font-weight: bold;
 }
