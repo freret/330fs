@@ -74,7 +74,7 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 	header('Location: 330FileServer');
 	exit;
 }else{
-	header("Location: upload.php");
+	header("Location: Upload.php");
 	exit;
 }
 ?>
