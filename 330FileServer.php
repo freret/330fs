@@ -12,6 +12,7 @@
 
     <li><a><?php
     session_start();
+    //check to make sure there is an active user and if not redirect to login page
     if (isset($_SESSION['username'])) {
       echo $_SESSION['username'];
     } else {
@@ -23,6 +24,7 @@
 
 <div id="testing">
   <?php
+  //generate file path and change directory. Then populate a table using the file names.
   $filepath = '/home/rfreret/Module2/'.$_SESSION['username'];
   chdir($filepath);
   $filenames = scandir('./');
@@ -52,6 +54,7 @@
     echo "<td>$differenced[$i]</td>";
     echo "<td>$filesize</td>";
     echo "<td><form action=\"download.php\" method=\"post\">";
+    //if user clicks button pass the file name and action to proper channel
     echo "<input type=\"submit\" name=\"filename\" value=\"Download\" class=\"register\"/>";
     echo "<input type=\"hidden\" name=\"filename\" value=\"$differenced[$i]\">";
     echo "</form>";
@@ -64,11 +67,11 @@
   echo "</tr>";
   echo "</table>";
   echo "</div>";
-
+//if there are no files then print out the message
   if (sizeof($differenced)==0) {
     echo "\n";
     echo "Please Upload A File";
-  } //upload message
+  }
   ?>
 </div>
 

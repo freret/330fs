@@ -8,7 +8,10 @@
 <img src="WULogo.png" alt="MEME" width="100">
 </div>
 <div id="Portal">
-  <?php session_start(); session_destroy(); ?>
+
+  <?php
+    //clear session on logout and page load
+   session_start(); session_destroy(); ?>
   <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
     <p>
       <label for="firstnameinput">Username:</label>
