@@ -1,4 +1,4 @@
-/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
+
 
 @font-face {
   font-family: "Lato-Black";
@@ -11,7 +11,7 @@
   src: url("Fonts/Lato-Light.ttf");
   src: url("Fonts/Lato-Light.eot") format("eot"), url("Fonts/Lato-Light.woff") format("woff"), url("Fonts/Lato-Light.woff2") format("woff2");
 }
-
+/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 ul {
   list-style-type: none;
   margin: 0;
@@ -35,6 +35,8 @@ li a {
   list-style-type: none;
 }
 
+
+/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 li b {
   font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
@@ -47,7 +49,6 @@ li b {
   list-style-type: none;
 }
 
-/*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
 li a:hover {
   background-color: #111;
