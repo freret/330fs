@@ -2,6 +2,7 @@
 <?php
     header("Content-type: text/css; charset: UTF-8");
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
+?>
 
 @font-face {
   font-family: "Lato-Black";
@@ -101,4 +102,3 @@ td {
   font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
 }
-?>
