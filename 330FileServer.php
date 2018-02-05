@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head><title>Fileserver</title>
-  <link rel="stylesheet" type="text/css" href="css/mainframe.php" />
+  <link rel="stylesheet" type="text/css" href="mainframe.css" />
   <meta name="google" content="notranslate" />
 </head>
 
@@ -9,6 +9,7 @@
   <ul>
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
     <li style="float:right"><a class="Upload" href="Upload.php">Upload File</a></li>
+    <li style="float:right"><a class="changelog" href="changelog.php">Change Log</a></li>
 
     <li><a><?php
     session_start();
@@ -39,6 +40,7 @@
   echo "</tr>";
   $totalsize = 0;
   for ($i = 0; $i < sizeof($differenced); ++$i) {
+    if (strcmp($differenced[$i], "changelog.csv")!==0){
     $specpath = $filepath.'/'.$differenced[$i];
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     $mime = $finfo->file($specpath);
@@ -64,6 +66,7 @@
     printf("<input type=\"hidden\" name=\"filename\" value=\"%s\">", htmlentities($differenced[$i]));
     echo "</form>";
     echo "</td>";
+  }
   }
   echo "</tr>";
   echo "</table>";
