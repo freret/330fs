@@ -86,14 +86,18 @@
   ?>
 </div>
 
+<div style="width:100%;height:20px; position: fixed;
+    bottom: 0px; left: 0px; background-color: GREEN; text-align: center;"
+    >Free
+    <?php echo (1-($totalBytes/13107200))."%"?>
+</div>
+<div style="width:<?php echo ($totalBytes/13107200)?>%;height:20px; position: fixed;
+   bottom: 0px; left: 0px; background-color: RED; text-align: center;"
+   >Used
+   <?php echo ($totalBytes/13107200)."\%"?>
+</div>
 
-<div style="width:130px;height:40px;border:1px solid white; position: fixed;
-   bottom: 0px; left: 0px; background-color: #333 text-align: center;"
 
-   >Data Left
-
-
- </div>
 
 
 
