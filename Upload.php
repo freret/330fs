@@ -57,15 +57,20 @@ $username=$_SESSION['username'];
 
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
+//$filename = preg_replace(' ', '_', $filename);
+//$filename = preg_replace('\s', '_', $filename);
+printf("<script type=\"text/javascript\">alert(\"%s\");</script>", $filename); 
+echo preg_replace(' ', '_', $filename);
+//echo $filename;
 if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
-  //echo "Invalid filename";
-  echo "<script type='text/javascript'>alert("please rename your file");</script>";
+  echo "Invalid filename";
+
   exit;
 }
 
 // Get the username and make sure it is valid
 if( !preg_match('/^[\w_\-]+$/', $username) ){
-  //echo "Invalid username";
+  echo "Invalid username";
   exit;
 }
 //upload the file
@@ -74,6 +79,7 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
   header('Location: 330FileServer');
   exit;
 }else{
+  echo "<script type=\"text/javascript\">alert(\"please rename your file\");</script>";
   header("Location: Upload.php");
   exit;
 }

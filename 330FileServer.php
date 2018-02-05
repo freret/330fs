@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head><title>Fileserver</title>
   <link rel="stylesheet" type="text/css" href="mainframe.css" />
-
+  <meta name="google" content="notranslate" />
 </head>
 
 <body>
@@ -37,6 +37,7 @@
   echo "<th>Size</th>";
   echo "<th>Actions</th>";
   echo "</tr>";
+  $totalsize = 0;
   for ($i = 0; $i < sizeof($differenced); ++$i) {
     $specpath = $filepath.'/'.$differenced[$i];
     $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -48,6 +49,7 @@
     $pow = min($pow, count($units) - 1);
     $bytes /= pow(1024, $pow);
     $filesize = round($bytes, 1) . ' ' . $units[$pow];
+    $totalsize += filesize($specpath);
     // End quoted work
     echo "<tr>";
     printf("<td>%s</td>", htmlentities($mime));
@@ -66,12 +68,17 @@
   echo "</tr>";
   echo "</table>";
   echo "</div>";
-//if there are no files then print out the message
+  //if there are no files then print out the message
   if (sizeof($differenced)==0) {
     echo "\n";
     echo "<br>";
     echo "<div class=\"uploadmessage\">Please Upload A File</div>";
   }
+  $tpow = floor(($totalsize ? log($totalsize) : 0) / log(1024));
+  $tpow = min($tpow, count($units) - 1);
+  $totalsize /= pow(1024, $tpow);
+  $totalsize = round($totalsize, 1) . ' ' . $units[$tpow];
+  echo $totalsize;
   ?>
 </div>
 
