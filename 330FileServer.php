@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head><title>Fileserver</title>
-  <link rel="stylesheet" type="text/css" href="mainframe.css" />
+  <link rel="stylesheet" type="text/css" href="mainframe.php" />
   <meta name="google" content="notranslate" />
 </head>
 
