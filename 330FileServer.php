@@ -87,4 +87,14 @@
 </div>
 
 
+<div style="width:130px;height:40px;border:1px solid white; position: fixed;
+   bottom: 0px; left: 0px; background-color: #333 text-align: center;"
+
+   >Data Left
+
+
+ </div>
+
+
+
 </html>
