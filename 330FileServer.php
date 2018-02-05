@@ -88,7 +88,7 @@
   echo "</div>";
   ?>
 
-
+<!-- Built Space Remaing Bar Two Html Boxes, % effects width. They can scale for bigger/smaller windows -->
 </div>
 <div class="spacebar" style="width:100%;height:20px; position: fixed;
     bottom: 0px; left: 0px; background-color: #2E8B57; text-align: center;border-top: 2px solid #333;"
