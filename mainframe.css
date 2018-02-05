@@ -44,6 +44,7 @@ li b {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  list-style-type: none;
 }
 
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
