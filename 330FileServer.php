@@ -82,19 +82,24 @@
   $tpow = min($tpow, count($units) - 1);
   $totalsize /= pow(1024, $tpow);
   $totalsize = round($totalsize, 1) . ' ' . $units[$tpow];
-  echo $totalsize;
+  echo $totalsize; echo " of 100 MB";
   ?>
-</div>
 
-<div style="width:100%;height:20px; position: fixed;
-    bottom: 0px; left: 0px; background-color: GREEN; text-align: center;"
-    >Free
-    <?php echo (1-($totalBytes/13107200))."%"?>
+
+
+//Space Remaing Bar
 </div>
-<div style="width:<?php echo ($totalBytes/13107200)?>%;height:20px; position: fixed;
-   bottom: 0px; left: 0px; background-color: RED; text-align: center;"
+<div style="width:100%;height:20px; position: fixed;
+    bottom: 0px; left: 0px; background-color: #2E8B57; text-align: center;border-top: 2px solid #333; color: #333;"
+    >Free Space
+    <?php echo round(((1-($totalBytes/13107200))*100))."%"?>
+</div>
+<div style="width: <?php echo round((($totalBytes/13107200)*100))."%"?>;height:20px; position: fixed;
+   bottom: 0px; left: 0px; background-color: #c62828; text-align: center; color: #333; border-Right: 2px solid #333;
+   "
    >Used
-   <?php echo ($totalBytes/13107200)."\%"?>
+   <?php echo round((($totalBytes/13107200)*100))."%"?>
+
 </div>
 
 
