@@ -23,6 +23,13 @@ $full_path = sprintf("/home/rfreret/Module2/%s/%s", $username, $filename);
 
 // Now we need to get the MIME type (e.g., image/jpeg).  PHP provides a neat little interface to do this called finfo.
 unlink($full_path);
+
+chdir('/home/rfreret/Module2/'.$username.'/');
+$array = [trim(date('M d, Y @ h:i:sa'),'"'), $filename, 'delet', (string)$_SERVER['REMOTE_ADDR']];
+chdir('/home/rfreret/Module2/'.$username.'/');
+$log = fopen("changelog.csv", "a");
+fputcsv($log, $array);
+fclose($log);
 header('Location: 330FileServer.php')
 
 ?>

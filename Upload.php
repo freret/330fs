@@ -51,14 +51,12 @@
 
 <?php
 error_reporting(0);
+date_default_timezone_set('UTC');
 $username=$_SESSION['username'];
 
 if (strcmp(basename($_FILES['uploadedfile']['name']), '')!==0) {
 // Get the filename and make sure it is valid
 $filename = basename($_FILES['uploadedfile']['name']);
-//$filename = preg_replace('/^[\w_\.\-]+$/', '', $filename);
-//$filename = preg_replace('/\s+/', '', $filename);
-//echo $filename;
 if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
   echo "<script type=\"text/javascript\">alert(\"Please upload a file without any spaces or special characters in its name\");</script>";
   exit;
@@ -72,9 +70,9 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
 //upload the file
 $full_path = sprintf('/home/rfreret/Module2/%s/%s', $username, $filename);
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
-  $array = array(date('M d, Y @ h:i:s a'), $filename, 'upload', (string)$_SERVER['REMOTE_ADDR']);
-  chdir('/home/rfreret/Module2/'.$username);
-  $log = fopen('changelog.csv', 'a');
+  $array = [trim(date('M d, Y @ h:i:sa'),'"'), $filename, 'upload', (string)$_SERVER['REMOTE_ADDR']];
+  chdir('/home/rfreret/Module2/'.$username.'/');
+  $log = fopen("changelog.csv", "a");
   fputcsv($log, $array);
   fclose($log);
   header('Location: 330FileServer');

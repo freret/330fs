@@ -30,5 +30,10 @@ header("Content-Type: ".$mime);
 //header("Content-Type: application/octet-stream");
 
 readfile($full_path);
+$array = [trim(date('M d, Y @ h:i:sa'),'"'), $filename, 'download', (string)$_SERVER['REMOTE_ADDR']];
+chdir('/home/rfreret/Module2/'.$username.'/');
+$log = fopen("changelog.csv", "a");
+fputcsv($log, $array);
+fclose($log);
 
 ?>

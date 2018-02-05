@@ -6,10 +6,10 @@
 
 <body>
 
-  <ul>
+  <ul style="list-style-type: none">
     <li style="float:right"><a class="active" href="loginpage.php">Logout</a></li>
     <li style="float:right"><a class="Upload" href="Upload.php">Upload File</a></li>
-    <li style="float:right"><a class="changelog" href="changelog.php">Change Log</a></li>
+    <li style="float:right"><a class="changelog" href="changelog.php">Changelog</a></li>
 
     <li><a><?php
     session_start();

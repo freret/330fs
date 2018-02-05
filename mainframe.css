@@ -68,6 +68,10 @@ body {
   background-color: #2E8B57;
 }
 
+.changelog {
+  background-color: #9A00CF;
+}
+
 #testing {
   padding-top: 40pt;
   width: 100%;
@@ -101,4 +105,12 @@ td {
   font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
 }
+
+.changelog {
+}
+
+.tableview {
+}
+
+
 ?>
