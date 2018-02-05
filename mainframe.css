@@ -103,7 +103,7 @@ td {
 
 .uploadmessage {
   color: white;
-  opacity: 70%;
+  opacity: .7;
   font-size: 20pt;
   font-family: "Lato-Light", lato-light, sans-serif;
   font-weight: lighter;
