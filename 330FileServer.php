@@ -72,33 +72,34 @@
   echo "</table>";
   echo "</div>";
   //if there are no files then print out the message
-  if (sizeof($differenced)==0) {
+  if (sizeof($differenced)<=1) {
     echo "\n";
     echo "<br>";
-    echo "<div class=\"uploadmessage\">Please Upload A File</div>";
+    echo "<div class=\"uploadmessage\">No files!</div>";
   }
+  $units = array('B', 'KB', 'MB', 'GB', 'TB');
   $totalBytes = $totalsize;
   $tpow = floor(($totalsize ? log($totalsize) : 0) / log(1024));
   $tpow = min($tpow, count($units) - 1);
   $totalsize /= pow(1024, $tpow);
   $totalsize = round($totalsize, 1) . ' ' . $units[$tpow];
-  echo $totalsize; echo " of 100 MB";
+  echo "<div class=\"messages\"><br>";
+  echo $totalsize; echo " of 10 MB";
+  echo "</div>";
   ?>
 
 
-
-//Space Remaing Bar
 </div>
-<div style="width:100%;height:20px; position: fixed;
-    bottom: 0px; left: 0px; background-color: #2E8B57; text-align: center;border-top: 2px solid #333; color: #333;"
+<div class="spacebar" style="width:100%;height:20px; position: fixed;
+    bottom: 0px; left: 0px; background-color: #2E8B57; text-align: center;border-top: 2px solid #333;"
     >Free Space
-    <?php echo round(((1-($totalBytes/13107200))*100))."%"?>
+    <?php echo round(((1-($totalBytes/(52428800/5)))*100))."%"?>
 </div>
-<div style="width: <?php echo round((($totalBytes/13107200)*100))."%"?>;height:20px; position: fixed;
-   bottom: 0px; left: 0px; background-color: #c62828; text-align: center; color: #333; border-Right: 2px solid #333;
+<div class="spacebar" style="width: <?php echo round((($totalBytes/(52428800/5))*100))."%"?>;height:20px; position: fixed;
+   bottom: 0px; left: 0px; background-color: #c62828; text-align: center; border-Right: 2px solid #333;
    "
    >Used
-   <?php echo round((($totalBytes/13107200)*100))."%"?>
+   <?php echo round((($totalBytes/(52428800/5))*100))."%"?>
 
 </div>
 

@@ -21,10 +21,6 @@
   </ul>
 </body>
 
-
-
-
-
 <div id="testing">
 </div>
 
@@ -67,11 +63,23 @@ if( !preg_match('/^[\w_\-]+$/', $username) ){
   echo "<script type=\"text/javascript\">alert(\"bad 2\");</script>";
   exit;
 }
+
 //upload the file
 $full_path = sprintf('/home/rfreret/Module2/%s/%s', $username, $filename);
 if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
   $array = [trim(date('M d, Y @ h:i:sa'),'"'), $filename, 'upload', (string)$_SERVER['REMOTE_ADDR']];
   chdir('/home/rfreret/Module2/'.$username.'/');
+  //inspired by https://stackoverflow.com/questions/478121/how-to-get-directory-size-in-php
+  $f = './';
+  $io = popen('/usr/bin/du -sk ' . $f, 'r');
+  $size = fgets($io, 4096);
+  $size = substr($size, 0, strpos($size, "\t"));
+  pclose($io);
+  if ($size > 10000) {
+    unlink($full_path);
+    echo "<script type=\"text/javascript\">alert(\"You have exceeded your storage limit. Delete files to free up space!\");</script>";
+    exit;
+  }
   $log = fopen("changelog.csv", "a");
   fputcsv($log, $array);
   fclose($log);
