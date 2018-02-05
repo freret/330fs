@@ -59,6 +59,7 @@ $username=$_SESSION['username'];
 $filename = basename($_FILES['uploadedfile']['name']);
 if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
   //echo "Invalid filename";
+  echo "<script type='text/javascript'>alert("please rename your file");</script>";
   exit;
 }
 
