@@ -24,7 +24,7 @@
   <?php
   if (isset($_POST['username'])) {
       $flag = false;
-      $nonewline = $_POST['username'];
+      $nonewline = (String)$_POST['username']);//filter in 
       $u = $_POST['username']."\n";
       //Variables for Login Page
       chdir('/home/rfreret/Module2');
