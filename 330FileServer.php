@@ -74,6 +74,7 @@
     echo "<br>";
     echo "<div class=\"uploadmessage\">Please Upload A File</div>";
   }
+  $totalBytes = $totalsize;
   $tpow = floor(($totalsize ? log($totalsize) : 0) / log(1024));
   $tpow = min($tpow, count($units) - 1);
   $totalsize /= pow(1024, $tpow);
