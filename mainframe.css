@@ -1,5 +1,17 @@
 /*We used the https://www.w3schools.com/css/css_navbar.asp and pieces of code to help build our bar */
 
+@font-face {
+  font-family: "Lato-Black";
+  src: url("Fonts/Lato-Black.ttf");
+  src: url("Fonts/Lato-Black.eot") format("eot"), url("Fonts/Lato-Black.woff") format("woff"), url("Fonts/Lato-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("Fonts/Lato-Light.ttf");
+  src: url("Fonts/Lato-Light.eot") format("eot"), url("Fonts/Lato-Light.woff") format("woff"), url("Fonts/Lato-Light.woff2") format("woff2");
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -74,10 +86,13 @@ td {
 
 .upload {
   background-color: #white;
-  width: 100%;
+  width: 10%;
 }
 
 .uploadmessage {
-  color: black;
-  font-weight: bold;
+  color: white;
+  opacity: 70%;
+  font-size: 20pt;
+  font-family: "Lato-Light", lato-light, sans-serif;
+  font-weight: lighter;
 }

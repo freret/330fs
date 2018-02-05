@@ -4,7 +4,7 @@
   src: url("Fonts/Lato-Black.eot") format("eot"), url("Fonts/Lato-Black.woff") format("woff"), url("Fonts/Lato-Black.woff2") format("woff2");
 }
 
-@@font-face {
+@font-face {
   font-family: "Lato-Light";
   src: url("Fonts/Lato-Light.ttf");
   src: url("Fonts/Lato-Light.eot") format("eot"), url("Fonts/Lato-Light.woff") format("woff"), url("Fonts/Lato-Light.woff2") format("woff2");
